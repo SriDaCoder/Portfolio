@@ -419,3 +419,18 @@ ul { list-style: none; padding: 0; margin: 0; color: white; }
     width: 15px;
   }
 }
+
+.main {
+  background: transparent;
+  backdrop-filter: blur(2px);
+  border-radius: 10px;
+  align-items: center;
+}
+
+.title {
+  align-self: center;
+}
+
+.cont {
+  align-self: center;
+}
