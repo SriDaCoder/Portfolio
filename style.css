@@ -23,7 +23,7 @@ html, body {
 /* CONTENT CENTERED */
 .content-container {
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
@@ -33,9 +33,33 @@ html, body {
   backdrop-filter: blur(5px);
 }
 
-.content-container h1 { font-size: 2.5em; margin-bottom: 20px; }
+.content-container h3 { font-size: 1.5em; margin-bottom: 20px; font-weight: 40;}
 .content-container p { font-size: 1.2em; margin-bottom: 20px; }
 .content-container button {
+  border: none;
+  padding: 1px;
+  background-color: black;
+  color: lightblue;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+/* CONTENT CENTERED */
+.content-container2 {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 1;
+  color: white;
+  background: transparent;
+  backdrop-filter: blur(5px);
+}
+
+.content-container2 h3 { font-size: 1.5em; margin-bottom: 20px; font-weight: 40; }
+.content-container2 p { font-size: 1.2em; margin-bottom: 20px; }
+.content-container2 button {
   border: none;
   padding: 1px;
   background-color: black;
