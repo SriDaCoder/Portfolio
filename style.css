@@ -1,107 +1,326 @@
-html, body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  min-height: 100vh;
-  background-color: #0E1117;
+@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Creepster&display=swap");
+
+:root {
+  --bg-color: #020202;
+  --panel-bg: #0a0a0a;
+  --matrix-green: #0f0;
+  --alert-red: #ff3333;
+  --text-color: #666;
 }
-
-canvas {
-  display: block;
-  background-color: #0E1117;
-  width: 100%;
-  height: 100vh;
-}
-
-nav {
-  background-color: #333;
-  position: fixed;
-  top: 0;
-  z-index: 1000;
-  display: flex;
-  justify-content: space-between;
-  padding: 20px;
-  width: 100%;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-}
-
-.nav-links li a::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  background-color: #318CE7;
-  bottom: -3px;
-  left: 0;
-  transition: width 0.4s ease-in-out;
-}
-
-footer {
-  background-color: #0E1117;
-  -webkit-text-fill-color: #F7F7F7;
-  padding: 10px;
-  position: relative;
-  bottom: 0;
-  width: 100%;
-}
-
-p {
-  -webkit-text-fill-color: white;
-  margin: 0;
-  padding: 10px;
-}
-
-
-h1 { font-size: 2.5em; -webkit-text-fill-color: white; }
-
-h2 { font-size: 2em; -webkit-text-fill-color: white; }
-
-h3 { font-size: 1.5em; -webkit-text-fill-color: white; }
-
-h4 { font-size: 1.2em; -webkit-text-fill-color: white; }
-
-h5 { font-size: 1.1em; -webkit-text-fill-color: white; }
-
-h6 { font-size: 1em; -webkit-text-fill-color: white; }
-
-marquee { color:white; font-size: 1.2em; font-weight: bold; /*background-color: #0E1117; */ }
-
-nav { -webkit-text-fill-color: white; background-color: #333; position: fixed; top: 0; z-index: 1000; display: flex; justify-content: space-between; padding: 20px; width: 100%; }
 
 body {
-  overflow: hidden; /* Hide scrollbars */
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: var(--bg-color);
+  font-family: "Share Tech Mono", monospace;
+  height: 100vh;
+  width: 100vw;
+  cursor: none;
+  /* Mouse gizli, fener var */
 }
 
-.logo a { text-decoration: none; -webkit-text-fill-color: #ffffff; font-weight: bold; font-size: 1.2em; transition: -webkit-text-fill-color 0.3s; }
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-.logo a:hover { -webkit-text-fill-color: #318CE7; }
+/* --- 1. FLASHLIGHT EFFECT (ULTIMATE VERSION) --- */
+.darkness-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle 320px at var(--x, 50%) var(--y, 50%),
+    transparent 5%,
+    rgba(10, 20, 10, 0.2) 20%,
+    /* Hafif kirli yeşil ton */ rgba(0, 0, 0, 0.85) 45%,
+    rgba(0, 0, 0, 0.98) 65%,
+    black 100%
+  );
+  z-index: 50;
+  pointer-events: none;
+  /* Hafif titreme animasyonu */
+  animation: flashlightFlicker 5s infinite alternate;
+  filter: blur(1px);
+  transition: background 0.1s;
+}
 
-.btn { background-color: #40434B; -webkit-text-fill-color: #F7F7F7; padding: 5px; border-radius: 10px; }
+@keyframes flashlightFlicker {
+  0%,
+  100% {
+    opacity: 0.98;
+  }
 
-.txt { background-color: #40434B; -webkit-text-fill-color: #F7F7F7; padding: 3px; border-radius: 10px; }
+  50% {
+    opacity: 1;
+  }
 
-.nav-links { list-style: none; display: flex; }
+  72% {
+    opacity: 0.94;
+  }
 
-.nav-links li { margin-right: 20px; }
+  78% {
+    opacity: 1;
+  }
+}
 
-.nav-links li a { text-decoration: none; -webkit-text-fill-color: #c8c8c8; position: relative; padding: 0 10px; transition: -webkit-text-fill-color 0.3s; display: inline-block; }
+/* Kırmızı Alarm Modu */
+.emergency-mode {
+  background: radial-gradient(
+    circle 400px at var(--x, 50%) var(--y, 50%),
+    rgba(255, 0, 0, 0.3) 0%,
+    rgba(50, 0, 0, 0.9) 40%,
+    rgba(0, 0, 0, 1) 80%
+  ) !important;
+  animation: pulse-red 0.2s infinite alternate !important;
+}
 
-.nav-links li a:hover { -webkit-text-fill-color: #318CE7; }
+/* Tam Karartma */
+.lights-out {
+  background: #000 !important;
+  opacity: 1 !important;
+}
 
-.nav-links li a::after { content: ''; position: absolute; width: 0; height: 2px; background-color: #318CE7; bottom: -6px; left: 0; transition: width 0.4s; display: block; }
+/* Matrix Modu (Overlay kalkar) */
+.matrix-view {
+  opacity: 0;
+  pointer-events: none;
+}
 
-.nav-links li a:hover::after { width: 100%; }
+/* --- 2. GİZEMLİ İPUÇLARI --- */
+.background-clues {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
 
-.nav-links li a.active::after { width: 100%; }
+.clue {
+  position: absolute;
+  font-family: "Creepster", cursive;
+  color: #151515;
+  font-size: 3rem;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+  transform: rotate(var(--r, 0deg));
+  transition: color 0.3s;
+}
 
-.nav-links li a.active { -webkit-text-fill-color: #318CE7; }
+/* Konami tuşları daha teknik görünsün */
+.c2,
+.c3,
+.c4,
+.c5 {
+  color: #222;
+  font-family: "Share Tech Mono";
+  font-weight: bold;
+  border: 2px dashed #222;
+  padding: 15px;
+  font-size: 2rem;
+}
 
-.nav-links li a.active:hover { -webkit-text-fill-color: #318CE7; }
+/* --- 3. GÜVENLİK PANELİ (TOZLU CAM EFEKTİ) --- */
+.security-panel {
+  position: relative;
+  background: linear-gradient(135deg, #0a0a0a 0%, #111 100%);
+  padding: 4rem;
+  border: 1px solid #1a1a1a;
+  border-radius: 6px;
+  text-align: center;
+  color: var(--text-color);
+  z-index: 10;
 
-li { color: white; font-size: 1.2em; }
+  /* Tozlu cam ve derinlik hissi */
+  box-shadow: 0 0 100px rgba(0, 0, 0, 1), inset 0 0 50px rgba(0, 20, 0, 0.1);
+  filter: grayscale(90%) contrast(140%) brightness(0.7);
+  transition: all 0.5s;
+}
 
-ul { list-style: none; padding: 0; margin: 0; color: white; }
+.icon-lock {
+  font-size: 5rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.3;
+}
+
+h1 {
+  font-size: 3rem;
+  margin: 0 0 1rem 0;
+  letter-spacing: 5px;
+  color: #555;
+  text-transform: uppercase;
+}
+
+.status-box {
+  border-top: 1px solid #222;
+  border-bottom: 1px solid #222;
+  padding: 15px 0;
+  margin: 20px 0;
+}
+
+.status-line {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.blink {
+  animation: blinker 2s linear infinite;
+}
+
+.red-text {
+  color: #600;
+  text-shadow: none;
+}
+
+.keypad-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 12px);
+  gap: 15px;
+  justify-content: center;
+  margin-top: 30px;
+  opacity: 0.1;
+}
+
+.keypad-grid span {
+  width: 12px;
+  height: 12px;
+  background: #333;
+  border-radius: 50%;
+}
+
+/* --- 4. MATRIX CANVAS & SUCCESS UI --- */
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  display: none;
+  /* JS ile açılacak */
+  opacity: 0;
+  transition: opacity 2s ease;
+}
+
+.matrix-overlay {
+  position: absolute;
+  z-index: 100;
+  text-align: center;
+  color: var(--matrix-green);
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 2s ease;
+  pointer-events: none;
+  width: 100%;
+}
+
+.huge-text {
+  font-size: 5rem;
+  margin-bottom: 0;
+  letter-spacing: 10px;
+  animation: glitchText 3s infinite;
+}
+
+button {
+  background: transparent;
+  border: 2px solid var(--matrix-green);
+  color: var(--matrix-green);
+  padding: 15px 40px;
+  font-family: inherit;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-top: 50px;
+  transition: all 0.3s;
+  pointer-events: all;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  box-shadow: 0 0 15px var(--matrix-green);
+}
+
+button:hover {
+  background: var(--matrix-green);
+  color: #000;
+  box-shadow: 0 0 30px var(--matrix-green);
+}
+
+/* --- ANIMASYONLAR --- */
+@keyframes pulse-red {
+  0% {
+    opacity: 0.8;
+    filter: hue-rotate(0deg);
+  }
+
+  100% {
+    opacity: 1;
+    filter: hue-rotate(-10deg);
+  }
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0.2;
+  }
+}
+
+/* Violent Shake (Sistem Çöküşü) */
+.shake-hard {
+  animation: shake 0.1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both infinite;
+  filter: invert(100%) contrast(200%);
+  /* Renkleri ters çevir */
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-2px, 0, 0) rotate(1deg);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(4px, 0, 0) rotate(-1deg);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-8px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(8px, 0, 0);
+  }
+}
+
+/* Glitch Text Effect */
+@keyframes glitchText {
+  0%,
+  100% {
+    text-shadow: 0 0 30px #0f0;
+    transform: translate(0);
+  }
+
+  20% {
+    text-shadow: 4px 0 #f00, -4px 0 #0ff;
+    transform: translate(-2px, 2px);
+  }
+
+  40% {
+    text-shadow: -4px 0 #f00, 4px 0 #0ff;
+    transform: translate(2px, -2px);
+  }
+
+  60% {
+    text-shadow: 0 0 20px #0f0;
+    filter: blur(1px);
+  }
+}
