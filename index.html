@@ -19,14 +19,26 @@
 
   <script>
     const container = document.querySelector('.matrix-container');
-    const columnWidth = 20; // width of each column in px
-    const columns = Math.floor(window.innerWidth / columnWidth);
+    const columnWidth = 20;
+    let columns = [];
 
-    for (let i = 0; i < columns; i++) {
-      const col = document.createElement('div');
-      col.classList.add('matrix-column');
-      container.appendChild(col);
+    function createColumns() {
+      container.innerHTML = ''; // remove existing
+      const cols = Math.floor(window.innerWidth / columnWidth);
+      for (let i = 0; i < cols; i++) {
+        const col = document.createElement('div');
+        col.classList.add('matrix-column');
+        container.appendChild(col);
+        columns.push(col);
+      }
     }
+
+    window.addEventListener('resize', () => {
+      columns = [];
+      createColumns();
+    });
+
+    createColumns();
   </script>
 </body>
 </html>
