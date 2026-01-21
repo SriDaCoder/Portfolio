@@ -1,55 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Portfolio</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="container">
-    <!-- LAYER 0: Duvara Kazınmış İpuçları -->
-    <div class="background-clues">
-      <span class="clue" style="top: 15%; left: 10%; --r: -10deg;">FIND THE PATTERN</span>
-      <span class="clue c2" style="top: 25%; right: 20%; --r: 5deg;">&uarr; &uarr;</span>
-      <span class="clue c3" style="bottom: 25%; left: 25%; --r: -5deg;">&darr; &darr;</span>
-      <span class="clue c4" style="top: 55%; right: 10%; --r: 15deg;">&larr; &rarr; &larr; &rarr;</span>
-      <span class="clue c5" style="bottom: 10%; right: 35%; --r: -2deg;">B A</span>
-      <span class="clue" style="top: 80%; left: 5%; --r: 20deg; font-size: 1.5rem;">START</span>
-      <span class="clue" style="top: 50%; left: 50%; opacity: 0.02; transform:translate(-50%,-50%); font-size:10rem;">?</span>
-    </div>
-
-    <!-- LAYER 1: Güvenlik Paneli -->
-    <div class="security-panel" id="panel">
-      <div class="panel-content">
-        <div class="icon-lock">🔒</div>
-        <h1 id="status-text">SYSTEM HALTED</h1>
-        <div class="status-box">
-          <div class="status-line">POWER: <span class="blink red-text">CRITICAL</span></div>
-          <div class="status-line">NET: <span class="blink">OFFLINE</span></div>
-          <div class="status-line">CORE: <span class="blink">UNSTABLE</span></div>
-        </div>
-        <p class="instruction" style="margin-top:20px; font-size: 0.8rem; letter-spacing: 2px;">MANUAL OVERRIDE
-          REQUIRED</p>
-
-        <div class="keypad-grid">
-          <span></span><span></span><span></span>
-          <span></span><span></span><span></span>
-          <span></span><span></span><span></span>
-        </div>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="zoom">
+      <div class="content">
+        <h1>Srinihas Akkineni's Portfolio</h1>
+        <p>This is part of my main flagship project. This is a basic encrypter which utilises a bas-40 key, and encodes all UniCode characters.</p>
+        <button onclick="window.open('https://sridacoder.github.io/GAIA/Προμηθεύς', '_blank')">Προμηθεύς</button>
       </div>
     </div>
 
-    <!-- LAYER 2: El Feneri Katmanı -->
-    <div class="darkness-overlay" id="flashlight"></div>
+    <script>
+    const c = document.querySelector('.content');
+    let s = 1;
 
-    <!-- LAYER 3: Matrix Canvas (Başlangıçta Gizli) -->
-    <canvas id="matrixCanvas"></canvas>
-
-    <!-- LAYER 4: Final Mesajı -->
-    <div class="matrix-overlay" id="successMessage">
-      <!-- JS ile doldurulacak -->
-    </div>
-  </div>
-</body>
+    c.onwheel = e => {
+      e.preventDefault();
+      s += e.deltaY * -0.001;
+      s = Math.min(Math.max(0.5, s), 3);
+      c.style.transform = `scale(${s})`;
+    };
+    </script>
+  </body>
 </html>
