@@ -8,6 +8,18 @@ html, body {
   font-family: Arial, sans-serif;
 }
 
+.head {
+  position: absolute;
+  top: 3%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 1;
+  color: white;
+  background: transparent;
+  backdrop-filter: blur(5px);
+}
+
 /* CONTENT CENTERED */
 .content-container {
   position: absolute;
@@ -30,6 +42,18 @@ html, body {
   color: lightblue;
   font-size: 1em;
   cursor: pointer;
+}
+
+footer {
+  position: absolute;
+  top: 97%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 1;
+  color: white;
+  background: transparent;
+  backdrop-filter: blur(5px);
 }
 
 .container {
