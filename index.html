@@ -7,38 +7,15 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- MATRIX BACKGROUND -->
-  <div class="matrix-container"></div>
+  <div class="container"></div>
 
-  <!-- CONTENT -->
   <div class="content-container">
     <h1>Srinihas Akkineni's Portfolio</h1>
-    <p>This is part of my main flagship project. This is a basic encrypter which utilises a bas-40 key, and encodes all UniCode characters.</p>
-    <button onclick="window.open('https://sridacoder.github.io/GAIA/Προμηθεύς', '_blank')">Προμηθεύς</button>
+    <h3>Below are some projects, all part of my main flagship project, GAIA. The README.md for the GAIA project can be accessed <button onclick="window.open('https://sridacoder.github.io/GAIA/', '_blank')">here</button>. Beware, it is not complete</h3>
+    <ul>
+      <li><p>This is part of my main flagship project. This is a basic encrypter which utilises a bas-40 key, and encodes all UniCode characters. The project is <button onclick="window.open('https://sridacoder.github.io/GAIA/Προμηθεύς', '_blank')">Προμηθεύς</button>.</p></li>
+      <li><p>This is another part of my main flagship project. This is a sort of Khan academy, but specialized for IGCSE and CBSE students, and is currently free. The website is not fully operational and only a few topics are there. The project is <button onclick="window.open('https://sridacoder.github.io/GAIA/Προμηθεύς', '_blank')">APOLLO</button>.</p></p></li>
+    </ul>
   </div>
-
-  <script>
-    const container = document.querySelector('.matrix-container');
-    const columnWidth = 20;
-    let columns = [];
-
-    function createColumns() {
-      container.innerHTML = ''; // remove existing
-      const cols = Math.floor(window.innerWidth / columnWidth);
-      for (let i = 0; i < cols; i++) {
-        const col = document.createElement('div');
-        col.classList.add('matrix-column');
-        container.appendChild(col);
-        columns.push(col);
-      }
-    }
-
-    window.addEventListener('resize', () => {
-      columns = [];
-      createColumns();
-    });
-
-    createColumns();
-  </script>
 </body>
 </html>
