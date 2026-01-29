@@ -4,8 +4,8 @@ html {
   width: 100vw;
   height: 100vh;
   background: #000;
-  overflow: hidden;
   font-family: Arial, sans-serif;
+  overflow: hidden;
 }
 
 .head {
@@ -30,6 +30,7 @@ body {
   display: flex;
   justify-content: center; /* horizontal center */
   align-items: flex-start; /* start from top */
+  padding-bottom: 14rem; /* prevent fixed card from overlapping content */
 }
 
 .parent {
@@ -42,27 +43,28 @@ body {
   width: 100%;
   padding: 0 20px;
   box-sizing: border-box;
+  font-size: 75%;
 }
 
-.content-container {
+.parent .content-container {
   width: 80%; /* or max-width: 600px */
   text-align: center;
   color: white;
-  background: rgba(0,0,0,0.3);
+  background: transparent;
   backdrop-filter: blur(5px);
   padding: 20px;
+  border-radius: 10px;
 }
 
-
-.content-container h3 { font-size: 1.5em; margin-bottom: 20px; font-weight: 40;}
-.content-container p { font-size: 1.2em; margin-bottom: 20px; }
-.content-container button {
+.parent .content-container h3 { font-size: 1.5em; margin-bottom: 20px; font-weight: 40;}
+.parent .content-container p { font-size: 1.2em; margin-bottom: 20px; }
+.parent .content-container button {
   border: none;
   padding: 1px;
-  background-color: black;
+  background-color: #313131;
   color: lightblue;
   font-size: 1em;
-  cursor: pointer;
+  cursor: auto;
 }
 
 footer {
@@ -78,219 +80,175 @@ footer {
 }
 
 .container {
+  width: 100%;
+  height: 100%;
+  background-color: #313131;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.171) 2px, transparent 0);
+  background-size: 30px 30px;
+  background-position: -5px -5px;
   position: absolute;
   inset: 0;
 }
-.container::before {
-  content: "";
-  position: absolute;
-  inset: -145%;
-  rotate: -45deg;
-  background: #000000;
+
+.card {
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(240, 15%, 9%);
+  --paragraph: hsl(0, 0%, 83%);
+  --line: hsl(240, 9%, 17%);
+  --primary: hsl(266, 92%, 58%);
+
+  animation: 3s ease-in 1s infinite reverse both running slide-in;
+  
+  position: relative;
+
+  top: 66.5%;
+  right: 1%;
+
+  padding: 1rem;
+  width: 19rem;
+  background-color: hsla(240, 15%, 9%, 1);
   background-image: radial-gradient(
-      4px 100px at 0px 235px,
-      rgb(255, 140, 17),
-      #0000
+      at 88% 40%,
+      hsla(240, 15%, 9%, 1) 0px,
+      transparent 85%
     ),
-    radial-gradient(4px 100px at 300px 235px, rgb(255, 119, 0), #884e2800),
-    radial-gradient(
-      1.5px 1.5px at 150px 117.5px,
-      rgb(255, 144, 9) 100%,
-      #0000 150%
-    ),
-    radial-gradient(4px 100px at 0px 252px, rgb(156, 14, 137), #0000),
-    radial-gradient(4px 100px at 300px 252px, rgb(23, 41, 206), #0000),
-    radial-gradient(
-      1.5px 1.5px at 150px 126px,
-      rgb(247, 102, 18) 100%,
-      #0000 150%
-    ),
-    radial-gradient(4px 100px at 0px 150px, rgb(249, 121, 16), #0000),
-    radial-gradient(4px 100px at 300px 150px, rgb(255, 128, 18), #0000),
-    radial-gradient(
-      1.5px 1.5px at 150px 75px,
-      rgb(255, 116, 10) 100%,
-      #0000 150%
-    ),
-    radial-gradient(4px 100px at 0px 253px, rgb(249, 137, 17), #0000),
-    radial-gradient(4px 100px at 300px 253px, rgb(248, 107, 14), #0000),
-    radial-gradient(
-      1.5px 1.5px at 150px 126.5px,
-      rgb(252, 129, 14) 100%,
-      #0000 150%
-    ),
-    radial-gradient(4px 100px at 0px 204px, rgb(234, 115, 18), #0000),
-    radial-gradient(4px 100px at 300px 204px, rgb(255, 139, 6), #0000),
-    radial-gradient(
-      1.5px 1.5px at 150px 102px,
-      rgb(255, 128, 9) 100%,
-      #0000 150%
-    ),
-    radial-gradient(4px 100px at 0px 134px, rgb(249, 133, 9), #0000),
-    radial-gradient(4px 100px at 300px 134px, rgb(251, 125, 15), #0000),
-    radial-gradient(
-      1.5px 1.5px at 150px 67px,
-      rgb(255, 146, 13) 100%,
-      #0000 150%
-    ),
-    radial-gradient(4px 100px at 0px 179px, rgb(249, 137, 17), #0000),
-    radial-gradient(4px 100px at 300px 179px, rgb(253, 122, 6), #0000),
-    radial-gradient(
-      1.5px 1.5px at 150px 89.5px,
-      rgb(234, 132, 7) 100%,
-      #0000 150%
-    ),
-    radial-gradient(4px 100px at 0px 299px, rgb(255, 115, 0), #0000),
-    radial-gradient(4px 100px at 300px 299px, rgb(255, 136, 0), #0000),
-    radial-gradient(
-      1.5px 1.5px at 150px 149.5px,
-      rgb(255, 123, 0) 100%,
-      #0000 150%
-    ),
-    radial-gradient(4px 100px at 0px 215px, rgb(255, 145, 0), #0000),
-    radial-gradient(4px 100px at 300px 215px, rgb(255, 132, 0), #0000),
-    radial-gradient(
-      1.5px 1.5px at 150px 107.5px,
-      rgb(255, 136, 0) 100%,
-      #0000 150%
-    ),
-    radial-gradient(4px 100px at 0px 281px, rgb(255, 170, 0), #0000),
-    radial-gradient(4px 100px at 300px 281px, rgb(255, 115, 0), #0000),
-    radial-gradient(
-      1.5px 1.5px at 150px 140.5px,
-      rgb(255, 119, 0) 100%,
-      #0000 150%
-    ),
-    radial-gradient(4px 100px at 0px 158px, rgb(255, 123, 0), #0000),
-    radial-gradient(4px 100px at 300px 158px, rgb(255, 132, 0), #0000),
-    radial-gradient(
-      1.5px 1.5px at 150px 79px,
-      rgb(255, 149, 0) 100%,
-      #0000 150%
-    ),
-    radial-gradient(4px 100px at 0px 210px, rgb(255, 123, 0), #0000),
-    radial-gradient(4px 100px at 300px 210px, rgb(255, 162, 0), #0000),
-    radial-gradient(
-      1.5px 1.5px at 150px 105px,
-      rgb(255, 136, 0) 100%,
-      #0000 150%
-    );
-  background-size:
-    300px 235px,
-    300px 235px,
-    300px 235px,
-    300px 252px,
-    300px 252px,
-    300px 252px,
-    300px 150px,
-    300px 150px,
-    300px 150px,
-    300px 253px,
-    300px 253px,
-    300px 253px,
-    300px 204px,
-    300px 204px,
-    300px 204px,
-    300px 134px,
-    300px 134px,
-    300px 134px,
-    300px 179px,
-    300px 179px,
-    300px 179px,
-    300px 299px,
-    300px 299px,
-    300px 299px,
-    300px 215px,
-    300px 215px,
-    300px 215px,
-    300px 281px,
-    300px 281px,
-    300px 281px,
-    300px 158px,
-    300px 158px,
-    300px 158px,
-    300px 210px,
-    300px 210px,
-    300px 210px;
-  animation: hi 150s linear infinite;
+    radial-gradient(at 49% 30%, hsla(240, 15%, 9%, 1) 0px, transparent 85%),
+    radial-gradient(at 14% 26%, hsla(240, 15%, 9%, 1) 0px, transparent 85%),
+    radial-gradient(at 0% 64%, hsla(263, 93%, 56%, 1) 0px, transparent 85%),
+    radial-gradient(at 41% 94%, hsla(284, 100%, 84%, 1) 0px, transparent 85%),
+    radial-gradient(at 100% 99%, hsla(306, 100%, 57%, 1) 0px, transparent 85%);
+
+  border-radius: 1rem;
+  box-shadow: 0px -16px 24px 0px rgba(255, 255, 255, 0.25) inset;
 }
-@keyframes hi {
-  0% {
-    background-position:
-      0px 220px,
-      3px 220px,
-      151.5px 337.5px,
-      25px 24px,
-      28px 24px,
-      176.5px 150px,
-      50px 16px,
-      53px 16px,
-      201.5px 91px,
-      75px 224px,
-      78px 224px,
-      226.5px 350.5px,
-      100px 19px,
-      103px 19px,
-      251.5px 121px,
-      125px 120px,
-      128px 120px,
-      276.5px 187px,
-      150px 31px,
-      153px 31px,
-      301.5px 120.5px,
-      175px 235px,
-      178px 235px,
-      326.5px 384.5px,
-      200px 121px,
-      203px 121px,
-      351.5px 228.5px,
-      225px 224px,
-      228px 224px,
-      376.5px 364.5px,
-      250px 26px,
-      253px 26px,
-      401.5px 105px,
-      275px 75px,
-      278px 75px,
-      426.5px 180px;
-  }
+
+.card .card__border {
+  overflow: hidden;
+  pointer-events: none;
+
+  position: absolute;
+  z-index: -10;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+  background-image: linear-gradient(
+    0deg,
+    hsl(0, 0%, 100%) -50%,
+    hsl(0, 0%, 40%) 100%
+  );
+
+  border-radius: 1rem;
+}
+
+.card .card__border::before {
+  content: "";
+  pointer-events: none;
+
+  position: fixed;
+  z-index: 200;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%), rotate(0deg);
+  transform-origin: left;
+
+  width: 200%;
+  height: 10rem;
+  background-image: linear-gradient(
+    0deg,
+    hsla(0, 0%, 100%, 0) 0%,
+    hsl(277, 95%, 60%) 40%,
+    hsl(277, 95%, 60%) 60%,
+    hsla(0, 0%, 40%, 0) 100%
+  );
+
+  animation: rotate 8s linear infinite;
+}
+
+@keyframes rotate {
   to {
-    background-position:
-      0px 6800px,
-      3px 6800px,
-      151.5px 6917.5px,
-      25px 13632px,
-      28px 13632px,
-      176.5px 13758px,
-      50px 5416px,
-      53px 5416px,
-      201.5px 5491px,
-      75px 17175px,
-      78px 17175px,
-      226.5px 17301.5px,
-      100px 5119px,
-      103px 5119px,
-      251.5px 5221px,
-      125px 8428px,
-      128px 8428px,
-      276.5px 8495px,
-      150px 9876px,
-      153px 9876px,
-      301.5px 9965.5px,
-      175px 13391px,
-      178px 13391px,
-      326.5px 13540.5px,
-      200px 14741px,
-      203px 14741px,
-      351.5px 14848.5px,
-      225px 18770px,
-      228px 18770px,
-      376.5px 18910.5px,
-      250px 5082px,
-      253px 5082px,
-      401.5px 5161px,
-      275px 6375px,
-      278px 6375px,
-      426.5px 6480px;
+    transform: rotate(360deg);
   }
 }
+
+.card .card_title__container .card_title {
+  font-size: 1rem;
+  color: var(--white);
+}
+
+.card .card_title__container .card_paragraph {
+  margin-top: 0.25rem;
+  width: 65%;
+
+  font-size: 0.5rem;
+  color: var(--paragraph);
+}
+
+.card .line {
+  width: 100%;
+  height: 0.1rem;
+  background-color: var(--line);
+
+  border: none;
+}
+
+.card .card__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.card .card__list .card__list_item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.card .card__list .card__list_item .check {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 1rem;
+  height: 1rem;
+  background-color: var(--primary);
+
+  border-radius: 50%;
+}
+
+.card .card__list .card__list_item .check .check_svg {
+  width: 0.75rem;
+  height: 0.75rem;
+
+  fill: var(--black);
+}
+
+.card .card__list .card__list_item .list_text {
+  font-size: 0.75rem;
+  color: var(--white);
+}
+
+.card .btn {
+  cursor: pointer;
+
+  padding: 0.5rem;
+  width: 100%;
+  background-image: linear-gradient(
+    0deg,
+    rgba(94, 58, 238, 1) 0%,
+    rgba(197, 107, 240, 1) 100%
+  );
+
+  font-size: 0.75rem;
+  color: var(--white);
+
+  text-align: center;
+  text-decoration: none;
+
+  border: 0;
+  border-radius: 9999px;
+  box-shadow: inset 0 -2px 25px -4px var(--white);
+}
+
