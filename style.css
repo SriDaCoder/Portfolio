@@ -46,14 +46,19 @@ body {
   font-size: 75%;
 }
 
-.parent .content-container {
-  width: 80%; /* or max-width: 600px */
-  text-align: center;
-  color: white;
-  background: transparent;
-  backdrop-filter: blur(5px);
-  padding: 20px;
-  border-radius: 10px;
+.parent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+
+  height: calc(100vh - 8rem); /* fits above footer & header */
+  justify-content: space-between;
+
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+  font-size: 75%;
 }
 
 .parent .content-container h3 { font-size: 1.5em; margin-bottom: 20px; font-weight: 40;}
