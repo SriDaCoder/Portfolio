@@ -1,23 +1,31 @@
-html {
+html, body {
   margin: 0;
   padding: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background: #000;
   font-family: Arial, sans-serif;
-  overflow: hidden;
+  overflow: hidden; /* hard lock: no scroll */
 }
 
 .head {
   position: absolute;
-  top: 3%;
+  top: 1rem;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
   text-align: center;
-  z-index: 1;
   color: white;
-  background: transparent;
-  backdrop-filter: blur(5px);
+  font-size: 0.9rem;
+}
+
+footer {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: white;
+  font-size: 0.7rem;
 }
 
 body {
@@ -30,53 +38,47 @@ body {
   display: flex;
   justify-content: center; /* horizontal center */
   align-items: flex-start; /* start from top */
-  padding-bottom: 14rem; /* prevent fixed card from overlapping content */
 }
 
 .parent {
   display: flex;
-  flex-direction: column; /* vertical stack */
+  flex-direction: column;
+  justify-content: space-between;
+
+  height: 100%;
+  max-height: 100%;
+
   align-items: center;
-  gap: 50px; /* vertical spacing */
-  margin-top: 50vh; /* move down 50% of viewport */
-  transform: translateY(-50%); /* center exactly */
-  width: 100%;
-  padding: 0 20px;
+  gap: 1rem;
+
+  padding: 5rem 1rem 4rem; /* header + footer space */
   box-sizing: border-box;
-  font-size: 75%;
+
+  font-size: clamp(0.7rem, 2.5vw, 0.85rem);
+
+  color: white;
 }
 
 .parent .content-container {
-  width: 80%; /* or max-width: 600px */
+  width: 100%;
+  max-width: 720px;
+
   text-align: center;
   color: white;
-  background: transparent;
-  backdrop-filter: blur(5px);
-  padding: 20px;
+
+  padding: 1rem;
   border-radius: 10px;
+
+  backdrop-filter: blur(5px);
 }
 
 .parent .content-container h3 { font-size: 1.5em; margin-bottom: 20px; font-weight: 40;}
 .parent .content-container p { font-size: 1.2em; margin-bottom: 20px; }
-.parent .content-container button {
-  border: none;
-  padding: 1px;
-  background-color: #313131;
-  color: lightblue;
+.parent .content-container button,
+.parent .btn {
   font-size: 1em;
-  cursor: auto;
-}
-
-footer {
-  position: absolute;
-  top: 97%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  z-index: 1;
-  color: white;
-  background: transparent;
-  backdrop-filter: blur(5px);
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
 }
 
 .container {
@@ -250,5 +252,21 @@ footer {
   border: 0;
   border-radius: 9999px;
   box-shadow: inset 0 -2px 25px -4px var(--white);
+}
+
+btn {
+  border-radius: 999px;
+  box-shadow: inset 0 -2px 25px -4px rgb(49,49,49);
+  background: #313131;
+}
+
+@media (max-width: 420px) {
+  .parent {
+    gap: 0.75rem;
+  }
+
+  .head {
+    font-size: 0.8rem;
+  }
 }
 
