@@ -10,14 +10,22 @@ html, body {
 
 .head {
   position: absolute;
-  top: 3%;
+  top: 1rem;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
   text-align: center;
-  z-index: 1;
   color: white;
-  background: transparent;
-  backdrop-filter: blur(5px);
+  font-size: 0.9rem;
+}
+
+footer {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: white;
+  font-size: 0.7rem;
 }
 
 body {
@@ -69,18 +77,6 @@ body {
   color: lightblue;
   font-size: 1em;
   cursor: auto;
-}
-
-footer {
-  position: absolute;
-  top: 97%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  z-index: 1;
-  color: white;
-  background: transparent;
-  backdrop-filter: blur(5px);
 }
 
 .container {
