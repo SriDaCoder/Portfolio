@@ -30,7 +30,6 @@ body {
   display: flex;
   justify-content: center; /* horizontal center */
   align-items: flex-start; /* start from top */
-  padding-bottom: 14rem; /* prevent fixed card from overlapping content */
 }
 
 .parent {
