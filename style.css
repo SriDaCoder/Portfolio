@@ -77,8 +77,10 @@ body {
 .parent .content-container button,
 .parent .btn {
   font-size: 1em;
-  padding: 0.5rem 0.75rem;
   cursor: pointer;
+  border: none;
+  background-color: #313131;
+  color: white;
 }
 
 .container {
