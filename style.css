@@ -260,18 +260,6 @@ btn {
   background: #313131;
 }
 
-@media (max-width: 768px) {
-  .card {
-    position: absolute;
-    bottom: 1rem;
-    right: 50%;
-    transform: translateX(50%) scale(0.9);
-
-    width: 90%;
-    max-width: 20rem;
-  }
-}
-
 @media (max-width: 420px) {
   .parent {
     gap: 0.75rem;
