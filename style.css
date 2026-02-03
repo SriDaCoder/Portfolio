@@ -55,6 +55,8 @@ body {
   box-sizing: border-box;
 
   font-size: clamp(0.7rem, 2.5vw, 0.85rem);
+
+  color: white;
 }
 
 .parent .content-container {
