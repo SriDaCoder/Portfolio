@@ -6,104 +6,74 @@
   <title>Srinihas Portfolio</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <div class="head"><h1>Srinihas Akkineni's Portfolio</h1></div>
-  <div class="container"></div>
-  <div class="parent">
-    <div class="content-container">
-      <h3>Below are some projects, all part of my main flagship project, GAIA. The README.md for the GAIA project can be accessed<button onclick="window.open('https://sridacoder.github.io/GAIA/', '_blank')">here.</button>FYI, the list below and the readme are incomplete</h3>
-      <ul>
-        <li><p>This is part of my main flagship project. This is a basic encrypter which utilises a base-40 key, and encodes all UniCode characters. The project is<button onclick="window.open('https://sridacoder.github.io/GAIA/Προμηθεύς', '_blank')">Προμηθεύς.</button></p></li>
-        <li><p>This is another part of my main flagship project. This is a sort of Khan academy, but specialized for IGCSE and CBSE students, and is currently free. The website is not fully operational and only a few topics are there. The project is<button onclick="window.open('https://sridacoder.github.io/GAIA/APOLLO', '_blank')">APOLLO.</button></p></p></li>
-        <li><p>This is the open-source github directory to view my project. Please click<button onclick="window.open('https://www.github.com/SriDaCoder/GAIA/tree/main')">here.</button></p></li>
-      </ul>
-    </div>
-    <hr style="color:#313131;">
-    <div class="content-container">
-      <button onclick="window.location.href='abt.html'" class="button"><p>About Me</p></button>
-    </div>
-  <div class="card">
-    <div class="card__border"></div>
-    <div class="card_title__container">
-      <span class="card_title">Want to find out more?</span>
-      <p class="card_paragraph">
-        Contact me for further details
-      </p>
-    </div>
-    <hr class="line" />
-    <ul class="card__list">
-      <li class="card__list_item">
-        <span class="check">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 16 16"
-            fill="currentColor"
-            class="check_svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-        </span>
-        <span class="list_text">2 Days (maximum) to respond</span>
-      </li>
-      <li class="card__list_item">
-        <span class="check">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 16 16"
-            fill="currentColor"
-            class="check_svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-        </span>
-        <span class="list_text">A Beginner-level python certificate receiver</span>
-      </li>
-      <li class="card__list_item">
-        <span class="check">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 16 16"
-            fill="currentColor"
-            class="check_svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-        </span>
-        <span class="list_text">Find me on Linkedin</span>
-      </li>
-      <li class="card__list_item">
-        <span class="check">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 16 16"
-            fill="currentColor"
-            class="check_svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-        </span>
-        <span class="list_text">Click the button below to contact me</span>
-      </li>
-    </ul>
-    <a class="btn" href="cont.html">Contact Me</a>
-  </div>
 
-  <footer><p>This webpage is incomplete. It will be complete in a while</p></footer>
+<body>
+  <!-- BACKGROUND -->
+  <div class="container"></div>
+
+  <!-- CONTENT -->
+  <div class="parent">
+    <div class="card-grid">
+
+      <!-- HEADER CARD -->
+      <div class="card span-2">
+        <div class="card-overlay"></div>
+        <div class="card-inner">
+          <h2>Srinihas Akkineni</h2>
+          <p>Portfolio · GAIA Flagship Project</p>
+        </div>
+      </div>
+
+      <!-- PROJECTS CARD -->
+      <div class="card">
+        <div class="card-overlay"></div>
+        <div class="card-inner">
+          <h3>GAIA Projects</h3>
+          <p>
+            Flagship system
+            <button onclick="window.open('https://sridacoder.github.io/GAIA/','_blank')">README</button>
+          </p>
+
+          <ul>
+            <li>
+              Προμηθεύς — Unicode base-40 encrypter
+              <button onclick="window.open('https://sridacoder.github.io/GAIA/Προμηθεύς','_blank')">Open</button>
+            </li>
+
+            <li>
+              APOLLO — IGCSE/CBSE learning platform
+              <button onclick="window.open('https://sridacoder.github.io/GAIA/APOLLO','_blank')">Open</button>
+            </li>
+
+            <li>
+              Source Code for GAIA
+              <button onclick="window.open('https://github.com/SriDaCoder/GAIA/tree/main','_blank')">GitHub</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ABOUT CARD -->
+      <div class="card">
+        <div class="card-overlay"></div>
+        <div class="card-inner card-center">
+          <button onclick="window.location.href='abt.html'">About Me</button>
+        </div>
+      </div>
+      <!-- CONTACT CARD -->
+      <div class="card">
+        <div class="card-overlay"></div>
+        <div class="card-inner card-center">
+          <button onclick="window.location.href='cont.html'">Contact Me</button>
+        </div>
+      </div>
+      <!--- ACHIEVEMENTS CARD -->
+      <div class="card">
+        <div class="card-overlay"></div>
+        <div class="card-inner card-center">
+          <button onclick="window.location.href='ach.html'">My Achievements</button>
+        </div>
+    </div>
+  </div>
 </body>
 </html>

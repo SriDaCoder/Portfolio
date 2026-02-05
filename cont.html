@@ -1,22 +1,77 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Srinihas Portfolio</title>
+  <title>Contact - Srinihas Portfolio</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <div class="container"></div>
-  <h1>
-    Below are some ways that you can contact me:
-  </h1>
 
-    <ul>
-      <li><p>Email: <a href="mailto:srinihasakkineni2010@gmail.com?subject=Hello%20There">srinihasakkineni2010@gmail.com</a></p></li>
-      <li><p>GitHub: <a href="https://www.github.com/SriDaCoder" target="_blank">https://www.github.com/SriDaCoder</a></p></li>
-      <li><p>LinkedIn: <a href="https://www.linkedin.com/in/srinihas-akkineni-978b2523b/" target="_blank">https://www.linkedin.com/in/srinihas-akkineni-978b2523b/</a></p></li>
-    </ul>
-  <button onclick="window.location.href='index.html'" class="button"><p>Click me to go back</p></button>
+<body>
+  <!-- BACKGROUND -->
+  <div class="container"></div>
+
+  <!-- PARENT GRID -->
+  <div class="parent">
+    <div class="card-grid">
+
+      <!-- HEADER CARD -->
+      <div class="card span-2">
+        <div class="card-overlay"></div>
+        <div class="card-inner">
+          <h2>Contact Me</h2>
+          <p>Below are some ways that you can reach out to me:</p>
+        </div>
+      </div>
+
+      <!-- EMAIL CARD -->
+      <div class="card">
+        <div class="card-overlay"></div>
+        <div class="card-inner">
+          <h3>Email</h3>
+          <p>
+            <a href="mailto:srinihasakkineni2010@gmail.com?subject=Hello%20There">
+              srinihasakkineni2010@gmail.com
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <!-- GITHUB CARD -->
+      <div class="card">
+        <div class="card-overlay"></div>
+        <div class="card-inner">
+          <h3>GitHub</h3>
+          <p>
+            <a href="https://www.github.com/SriDaCoder" target="_blank">
+              https://www.github.com/SriDaCoder
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <!-- LINKEDIN CARD -->
+      <div class="card">
+        <div class="card-overlay"></div>
+        <div class="card-inner">
+          <h3>LinkedIn</h3>
+          <p>
+            <a href="https://www.linkedin.com/in/srinihas-akkineni-978b2523b/" target="_blank">
+              https://www.linkedin.com/in/srinihas-akkineni-978b2523b/
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <!-- BACK BUTTON CARD -->
+      <div class="card card-center span-2">
+        <div class="card-overlay"></div>
+        <div class="card-inner card-center">
+          <button onclick="window.location.href='index.html'">Go Back</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </body>
 </html>

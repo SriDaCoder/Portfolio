@@ -1,35 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Srinihas Portfolio</title>
-    <link rel="stylesheet" href="https://sridacoder.github.io/Portfolio/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 - Srinihas Portfolio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container"></div>
-    <div class="parent">
-        <div class="content-container">
-            <h1>404 - Page Not Found</h1>
-            <p>
-                Oops! The page you are looking for does not exist. Here are some
-                helpful links:
-            </p>
-            <ul>
-                <li>
-                    <p><button onclick="window.location.href='index.html'" class="btn">Go back to Home Page</button></p>
-                </li>
-                <li>
-                    <p><button onclick="window.location.href='cont.html'" class="btn">Contact Me</button></p>
-                </li>
-                <li>
-                    <p><button onclick="window.location.href='abt.html'" class="btn">About Me</button></p>
-                </li>
-            </ul>
+  <!-- BACKGROUND -->
+  <div class="container"></div>
+
+  <!-- PARENT GRID -->
+  <div class="parent">
+    <div class="card-grid">
+
+      <!-- 404 HEADER CARD -->
+      <div class="card span-2">
+        <div class="card-overlay"></div>
+        <div class="card-inner">
+          <h1>404 - Page Not Found</h1>
+          <p>Oops! The page you are looking for does not exist. Here are some helpful links:</p>
         </div>
+      </div>
+
+      <!-- HOME BUTTON CARD -->
+      <div class="card card-center">
+        <div class="card-overlay"></div>
+        <div class="card-inner card-center">
+          <button onclick="window.location.href='index.html'">Go Back to Home</button>
+        </div>
+      </div>
+
+      <!-- CONTACT BUTTON CARD -->
+      <div class="card card-center">
+        <div class="card-overlay"></div>
+        <div class="card-inner card-center">
+          <button onclick="window.location.href='cont.html'">Contact Me</button>
+        </div>
+      </div>
+
+      <!-- ABOUT BUTTON CARD -->
+      <div class="card card-center">
+        <div class="card-overlay"></div>
+        <div class="card-inner card-center">
+          <button onclick="window.location.href='abt.html'">About Me</button>
+        </div>
+      </div>
+
     </div>
-    <footer>
-        <p>This webpage is incomplete. It will be complete in a while</p>
-    </footer>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>This webpage is incomplete. It will be complete in a while</p>
+  </footer>
 </body>
 </html>

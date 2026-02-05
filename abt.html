@@ -1,23 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Srinihas Portfolio</title>
+  <title>About Me - Srinihas Portfolio</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- BACKGROUND -->
   <div class="container"></div>
+
+  <!-- PARENT GRID -->
   <div class="parent">
-    <img src="me.png" alt="Picture of Me" class="me-image">
-    <div class="content-container">
-      <h1>About Me</h1>
-      <p>
-        Hello! My name is Srinihas Akkineni, and I am a high school student with a passion for coding and technology. I have been programming for several years now, and I enjoy creating projects that solve real-world problems. In addition to coding, I also have interests in literature and martial arts. I am constantly seeking new challenges and opportunities to learn and grow in my skills. Thank you for visiting my portfolio!
-      </p>
-    </div>
-    <div class="content-container">
-      <button onclick="window.location.href='index.html'" class="button"><p>Click me to go back</p></button>
+    <div class="card-grid">
+
+      <!-- ABOUT ME CARD WITH IMAGE & TEXT -->
+      <div class="card span-2">
+        <div class="card-overlay"></div>
+        <div class="card-inner about-me-grid">
+
+          <!-- IMAGE -->
+          <div class="about-image">
+            <img src="me.png" alt="Picture of Me" class="me-image">
+          </div>
+
+          <!-- TEXT -->
+          <div class="about-text">
+            <h1>About Me</h1>
+            <p>
+              Hello! My name is Srinihas Akkineni, and I am a high school student with a passion for coding and technology. I have been programming for several years now, and I enjoy creating projects that solve real-world problems. In addition to coding, I also have interests in literature and martial arts. I am constantly seeking new challenges and opportunities to learn and grow in my skills. Thank you for visiting my portfolio!
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- BACK BUTTON CARD -->
+      <div class="card card-center span-2">
+        <div class="card-overlay"></div>
+        <div class="card-inner card-center">
+          <button onclick="window.location.href='index.html'">Go Back</button>
+        </div>
+      </div>
+
     </div>
   </div>
 </body>
