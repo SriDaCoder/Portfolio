@@ -108,6 +108,7 @@ html, body {
 /* =========================
    CARD CONTENT
 ========================= */
+.card-inner h1,
 .card-inner h2,
 .card-inner h3 {
   margin-bottom: 0.5rem;
@@ -130,17 +131,14 @@ html, body {
    BUTTON STYLE
 ========================= */
 .card-inner button {
-  all: unset; /* reset broken inherited styles */
+  all: unset; /* reset inherited styles */
   cursor: pointer;
-
   padding: 0.45rem 0.9rem;
   border-radius: 12px;
-
   background: #3a3a3a;
   color: white;
   font-size: 0.9rem;
   text-align: center;
-
   transition: background 0.2s ease, transform 0.15s ease;
 }
 
@@ -167,7 +165,9 @@ html, body {
   align-items: center;
 }
 
-/* ABOUT ME CARD GRID */
+/* =========================
+   ABOUT ME CARD IMAGE
+========================= */
 .about-me-grid {
   display: flex;
   flex-direction: row;
@@ -186,7 +186,7 @@ html, body {
   flex: 1;
 }
 
-/* RESPONSIVE: stack on small screens */
+/* STACK IMAGE ON SMALL SCREENS */
 @media (max-width: 700px) {
   .about-me-grid {
     flex-direction: column;
@@ -198,4 +198,14 @@ html, body {
     width: 150px;
     height: 150px;
   }
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #ccc;
+  padding: 1rem 0;
 }
