@@ -82,6 +82,11 @@ body {
   background-color: #313131;
   color: white;
 }
+.parent .content-container button:hover,
+.parent .btn:hover {
+  background-color: #313A31;
+}
+
 
 .container {
   width: 100%;
