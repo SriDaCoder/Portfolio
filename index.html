@@ -6,16 +6,12 @@
   <title>Srinihas Portfolio</title>
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-  <!-- BACKGROUND -->
   <div class="container"></div>
-
-  <!-- CONTENT -->
   <div class="parent">
     <div class="card-grid">
 
-      <!-- HEADER CARD -->
+      <!-- HOME / PROJECTS HEADER -->
       <div class="card span-2">
         <div class="card-overlay"></div>
         <div class="card-inner">
@@ -29,51 +25,59 @@
         <div class="card-overlay"></div>
         <div class="card-inner">
           <h3>GAIA Projects</h3>
-          <p>
-            Flagship system
-            <button onclick="window.open('https://sridacoder.github.io/GAIA/','_blank')">README</button>
-          </p>
-
+          <p>Flagship system <button onclick="window.open('https://sridacoder.github.io/GAIA/','_blank')">README</button></p>
           <ul>
-            <li>
-              Προμηθεύς — Unicode base-40 encrypter
+            <li>Προμηθεύς — Unicode base-40 encrypter
               <button onclick="window.open('https://sridacoder.github.io/GAIA/Προμηθεύς','_blank')">Open</button>
             </li>
-
-            <li>
-              APOLLO — IGCSE/CBSE learning platform
+            <li>APOLLO — IGCSE/CBSE learning platform
               <button onclick="window.open('https://sridacoder.github.io/GAIA/APOLLO','_blank')">Open</button>
             </li>
-
-            <li>
-              Source Code for GAIA
+            <li>Source Code
               <button onclick="window.open('https://github.com/SriDaCoder/GAIA/tree/main','_blank')">GitHub</button>
             </li>
           </ul>
         </div>
       </div>
 
-      <!-- ABOUT CARD -->
-      <div class="card">
+      <!-- ABOUT ME CARD -->
+      <div class="card span-2">
         <div class="card-overlay"></div>
-        <div class="card-inner card-center">
-          <button onclick="window.location.href='abt.html'">About Me</button>
+        <div class="card-inner about-me-grid">
+          <div class="about-image"><img src="me.png" alt="Picture of Me" class="me-image"></div>
+          <div class="about-text">
+            <h1>About Me</h1>
+            <p>Hello! My name is Srinihas Akkineni, and I am a high school student with a passion for coding and technology. I have been programming for several years now, and I enjoy creating projects that solve real-world problems. In addition to coding, I also have interests in literature and martial arts. I am constantly seeking new challenges and opportunities to learn and grow in my skills. Thank you for visiting my portfolio!</p>
+          </div>
         </div>
       </div>
+
       <!-- CONTACT CARD -->
-      <div class="card">
+      <div class="card span-2">
         <div class="card-overlay"></div>
-        <div class="card-inner card-center">
-          <button onclick="window.location.href='cont.html'">Contact Me</button>
+        <div class="card-inner">
+          <h2>Contact Me</h2>
+          <ul>
+            <li>Email: <a href="mailto:srinihasakkineni2010@gmail.com?subject=Hello%20There">srinihasakkineni2010@gmail.com</a></li>
+            <li>GitHub: <a href="https://www.github.com/SriDaCoder" target="_blank">https://www.github.com/SriDaCoder</a></li>
+            <li>LinkedIn: <a href="https://www.linkedin.com/in/srinihas-akkineni-978b2523b/" target="_blank">https://www.linkedin.com/in/srinihas-akkineni-978b2523b/</a></li>
+          </ul>
         </div>
       </div>
-      <!--- ACHIEVEMENTS CARD -->
-      <div class="card">
+
+      <!-- BACK BUTTON CARD -->
+      <div class="card card-center span-2">
         <div class="card-overlay"></div>
         <div class="card-inner card-center">
-          <button onclick="window.location.href='ach.html'">My Achievements</button>
+          <button onclick="window.location.href='index.html'">Go Back</button>
         </div>
+      </div>
+
     </div>
   </div>
+
+  <footer>
+    <p>This webpage is incomplete. It will be complete in a while</p>
+  </footer>
 </body>
 </html>
