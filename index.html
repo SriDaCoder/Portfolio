@@ -2,82 +2,72 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <title>Srinihas Akkineni | Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Srinihas Portfolio</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container"></div>
-  <div class="parent">
-    <div class="card-grid">
 
-      <!-- HOME / PROJECTS HEADER -->
-      <div class="card span-2">
-        <div class="card-overlay"></div>
-        <div class="card-inner">
-          <h2>Srinihas Akkineni</h2>
-          <p>Portfolio · GAIA Flagship Project</p>
-        </div>
+  <!-- Top navbar -->
+  <nav class="navbar">
+    <div class="logo">SA</div>
+    <div class="tabs-container">
+      <div class="tabs">
+        <input type="radio" name="tab" id="radio-1" checked>
+        <label for="radio-1" class="tab">Home</label>
+
+        <input type="radio" name="tab" id="radio-2">
+        <label for="radio-2" class="tab">About Me</label>
+
+        <input type="radio" name="tab" id="radio-3">
+        <label for="radio-3" class="tab">My Projects</label>
+
+        <input type="radio" name="tab" id="radio-4">
+        <label for="radio-4" class="tab">Contact</label>
+
+        <div class="glider"></div>
       </div>
-
-      <!-- PROJECTS CARD -->
-      <div class="card">
-        <div class="card-overlay"></div>
-        <div class="card-inner">
-          <h3>GAIA Projects</h3>
-          <p>Flagship system <button onclick="window.open('https://sridacoder.github.io/GAIA/','_blank')">README</button></p>
-          <ul>
-            <li>Προμηθεύς — Unicode base-40 encrypter
-              <button onclick="window.open('https://sridacoder.github.io/GAIA/Προμηθεύς','_blank')">Open</button>
-            </li>
-            <li>APOLLO — IGCSE/CBSE learning platform
-              <button onclick="window.open('https://sridacoder.github.io/GAIA/APOLLO','_blank')">Open</button>
-            </li>
-            <li>Source Code
-              <button onclick="window.open('https://github.com/SriDaCoder/GAIA/tree/main','_blank')">GitHub</button>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- ABOUT ME CARD -->
-      <div class="card span-2">
-        <div class="card-overlay"></div>
-        <div class="card-inner about-me-grid">
-          <div class="about-image"><img src="me.png" alt="Picture of Me" class="me-image"></div>
-          <div class="about-text">
-            <h1>About Me</h1>
-            <p>Hello! My name is Srinihas Akkineni, and I am a high school student with a passion for coding and technology. I have been programming for several years now, and I enjoy creating projects that solve real-world problems. In addition to coding, I also have interests in literature and martial arts. I am constantly seeking new challenges and opportunities to learn and grow in my skills. Thank you for visiting my portfolio!</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- CONTACT CARD -->
-      <div class="card span-2">
-        <div class="card-overlay"></div>
-        <div class="card-inner">
-          <h2>Contact Me</h2>
-          <ul>
-            <li>Email: <a href="mailto:srinihasakkineni2010@gmail.com?subject=Hello%20There">srinihasakkineni2010@gmail.com</a></li>
-            <li>GitHub: <a href="https://www.github.com/SriDaCoder" target="_blank">https://www.github.com/SriDaCoder</a></li>
-            <li>LinkedIn: <a href="https://www.linkedin.com/in/srinihas-akkineni-978b2523b/" target="_blank">https://www.linkedin.com/in/srinihas-akkineni-978b2523b/</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- BACK BUTTON CARD -->
-      <div class="card card-center span-2">
-        <div class="card-overlay"></div>
-        <div class="card-inner card-center">
-          <button onclick="window.location.href='index.html'">Go Back</button>
-        </div>
-      </div>
-
     </div>
-  </div>
+  </nav>
 
-  <footer>
-    <p>This webpage is incomplete. It will be complete in a while</p>
-  </footer>
+  <!-- Header -->
+  <header id="header">
+    <img src="me.png" alt="Profile Picture" class="profile-pic">
+    <h1>Srinihas Akkineni</h1>
+    <p>A passionate software developer with expertise in Python 3.12+ development and UI/UX design.</p>
+  </header>
+
+  <!-- Sections -->
+  <section id="section1" class="section one">
+    <h2>About Me</h2>
+    <p>
+      I'm a software developer with a strong background in Python 3.12+ and UI/UX design.
+      I have various projects that showcase my skills and passion for coding,
+      which are shown in the next section.
+    </p>
+  </section>
+
+  <section id="section2" class="section two">
+    <h2>My Projects</h2>
+    <p>I have a great many projects that showcase my skills and passion for coding, such as,
+    </p>
+    <ul>
+      <li>GAIA <a href="https://sridacoder.github.io/GAIA/" class="btn" target="_blank">(Click me)</a>, which is my flagship project.</li>
+      <li>APOLLO <a href="https://sridacoder.github.io/APOLLO/" class="btn" target="_blank">(Click me)</a>, which is a sort of teaching tool for most things in school.</li>
+      <li>Προμηθεύς <a href="https://sridacoder.github.io/Προμηθεύς/" class="btn" target="_blank">(Click me)</a>, which is an encryption/decryption program for most unicode text</li>
+    </ul>
+  </section>
+
+  <section id="section3" class="section three">
+    <h2>Contact</h2>
+    <p>You can contact me through the following: </p>
+    <ul>
+      <li>Email: <a href="mailto:srinihasakkineni2010@gmail.com" class="btn">srinihasakkineni2010@gmail.com</a></li>
+      <li>GitHub: <a href="https://github.com/sridacoder" class="btn" target="_blank">Sridacoder</a></li>
+      <li>LinkedIn: <a href="https://www.linkedin.com/in/srinihas-akkineni/" class="btn" target="_blank">Srinihas Akkineni</a></li>
+    </ul>
+  </section>
+
+  <script src="script.js"></script>
 </body>
 </html>
