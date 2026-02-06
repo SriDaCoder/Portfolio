@@ -109,7 +109,11 @@ header.visible, section.visible {
   transform: translateY(0);
 }
 
-/* SECTION COLORS */
+header h1 {
+  font-size: 2.75rem;
+  margin-bottom: 10px;
+}
+
 header { background: linear-gradient(135deg, #020617, #020b2d); align-items: center;}
 .section.one { background: linear-gradient(135deg, #020617, #03123f); }
 .section.two { background: linear-gradient(135deg, #03123f, #041a5c); }
