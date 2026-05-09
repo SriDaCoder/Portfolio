@@ -43,3 +43,11 @@ window.addEventListener('scroll', () => {
 
 // Initial glider setup
 window.dispatchEvent(new Event('scroll'));
+
+function on() {
+  document.getElementById("overlay").style.display = "flex";
+}
+
+function off() {
+  document.getElementById("overlay").style.display = "none";
+}

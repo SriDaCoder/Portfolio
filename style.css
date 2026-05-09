@@ -88,6 +88,7 @@ body {
 #radio-2:checked ~ .glider { transform: translateX(100%); width: 80px; }
 #radio-3:checked ~ .glider { transform: translateX(200%); width: 80px; }
 #radio-4:checked ~ .glider { transform: translateX(300%); width: 80px; }
+#radio-5:checked ~ .glider { transform: translateX(300%); width: 80px; }
 
 /* HEADER & SECTIONS */
 header, section {
@@ -118,6 +119,7 @@ header { background: linear-gradient(135deg, #020617, #020b2d); align-items: cen
 .section.one { background: linear-gradient(135deg, #020617, #03123f); }
 .section.two { background: linear-gradient(135deg, #03123f, #041a5c); }
 .section.three { background: linear-gradient(135deg, #041a5c, #06247a); }
+.section.four { background: linear-gradient(135deg, #041a5c, #06247a); }
 
 section h2 {
   font-size: 2.2rem;
@@ -149,4 +151,37 @@ section p {
 li {
   margin-bottom: 10px;
   color: #b8b8b8;;
+}
+
+#overlay {
+  position: fixed;
+
+  display: none;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+
+  top: 0;
+  left: 0;
+
+  background-color: rgba(0,0,0,0.5);
+
+  z-index: 2;
+  cursor: pointer;
+
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
