@@ -115,7 +115,7 @@ header h1 {
   margin-bottom: 10px;
 }
 
-header { background: linear-gradient(135deg, #020617, #020b2d); align-items: center;}
+header { background: linear-gradient(135deg, #020617, #020b2d); align-items: center; }
 .section.one { background: linear-gradient(135deg, #020617, #03123f); }
 .section.two { background: linear-gradient(135deg, #03123f, #041a5c); }
 .section.three { background: linear-gradient(135deg, #041a5c, #06247a); }
